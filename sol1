@@ -1,0 +1,8 @@
+import pandas as pd
+a = pd.read_csv('data/mtcars.csv', index_col=0)
+
+x=a['qsec']
+x_MinMax = (x-x.min(axis=0))/(x.max(axis=0)-x.min(axis=0))
+results = len(x_MinMax[x_MinMax>0.5])
+print(x_MinMax)
+print(results)
